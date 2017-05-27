@@ -1,0 +1,72 @@
+/*==========================================================================
+  hamburger
+==========================================================================*/
+
+.hamburger {
+  position: relative;
+  z-index: $above-content;
+  display: block;
+  width: 44px;
+  height: 44px;
+  overflow: hidden;
+  white-space: nowrap;
+  /* hide text */
+  color: transparent;
+}
+
+.hamburger__item {
+  top: 50%;
+  right: 10px;
+  margin-top: -2px;
+  transition: background-color .3s .3s;
+
+  &,
+  &::before,
+  &::after {
+    position: absolute;
+    display: inline-block;
+    width: 24px;
+    height: 3px;
+    background-color: $grey-dark;
+  }
+
+  &::before,
+  &::after {
+    /* other 2 lines */
+    content: '';
+    right: 0;
+    /* Force Hardware Acceleration in WebKit */
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    transform-origin: 0% 50%;
+    transition: transform .3s .3s;
+  }
+
+  &::before {
+    top: -6px;
+  }
+
+  &::after {
+    top: 6px;
+  }
+}
+
+.hamburger_close {
+  .hamburger__item {
+    /* hide line in the center */
+    background-color: rgba($grey-dark, 0);
+
+    &::before,
+    &::after {
+      background-color: rgba($grey-dark, 1);
+    }
+
+    &::before {
+      transform: translate(4px, -3px) rotate(45deg);
+    }
+
+    &::after {
+      transform: translate(4px, 2px) rotate(-45deg);
+    }
+  }
+}
