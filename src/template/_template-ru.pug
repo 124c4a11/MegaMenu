@@ -1,0 +1,43 @@
+block variables
+
+doctype html
+html
+  head(lang="ru")
+    meta(charset="utf-8")
+    title
+      block title
+    meta(content="" name="author")
+    meta(content="" name="description")
+    meta(content="" name="keywords")
+    meta(content="width=device-width, initial-scale=1" name="viewport")
+    meta(content="ie=edge" http-equiv="x-ua-compatible")
+
+    //- favicon block start
+    //- favicon block end
+
+    link(rel='stylesheet' href='/assets/css/vendor.css')
+    link(rel='stylesheet' href='/assets/css/app.css')
+
+    <!--[if lt IE 9]>
+    script(src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js")
+    <![endif]-->
+
+  body.page
+
+    <!--[if lt IE 9]>
+      p.browserupgrade
+        | Внимание! Вы используете <strong>устаревший браузер.</strong> Данный сайт построен на передовых, современных технологиях и не поддерживает Ваш браузер. Использование устаревшего браузера повышает риск взлома вашего компьютера. Настоятельно рекомендуем выбрать и установить любой из современных браузеров. Это бесплатно и займет всего несколько минут. <a href="http://browsehappy.com/">Обновить браузер.</a>
+    <![endif]-->
+
+
+    block content
+
+
+
+    script(src="/assets/js/common.js")
+    //Avoid `console` errors in browsers that lack a console.
+    script common.avoidConsoleErrors();
+    // svg4everybody adds SVG External Content support to all browsers.
+    script common.svg4everybody();
+    // Place any jQuery/helper plugins in here.
+    block script

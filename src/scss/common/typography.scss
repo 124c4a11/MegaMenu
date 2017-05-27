@@ -1,0 +1,15 @@
+/*==========================================================================
+  Typography
+==========================================================================*/
+
+$body-font: "latoregular", sans-serif;
+
+html {
+  font-size: 100.01%;
+}
+
+body {
+  font: $font-size-base + px/1.41 $body-font;
+  color: $text-color-base;
+  -webkit-font-smoothing: antialiased;
+}

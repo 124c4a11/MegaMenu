@@ -1,0 +1,36 @@
+@mixin lato($weight: regular) {
+  @if ($weight == light) {
+    font-weight: lighter;
+    font-family: 'latolight', sans-serif;
+  }
+
+  @if ($weight == regular) {
+    font-family: 'latoregular', sans-serif;
+  }
+
+  @if ($weight == black) {
+    font-family: 'latoblack', sans-serif;
+  }
+
+  @if ($weight == bold) {
+    font-family: 'latobold', sans-serif;
+  }
+}
+
+@mixin latoitalic($weight: regular) {
+  @if ($weight == light) {
+    font-family: 'latolight_italic';
+  }
+
+  @if ($weight == regular) {
+    font-family: 'latoitalic', sans-serif;
+  }
+
+  @if ($weight == bold) {
+    font-family: 'latobold_italic', sans-serif;
+  }
+
+  @if ($weight == black) {
+    font-family: 'latoblack_italic', sans-serif;
+  }
+}
