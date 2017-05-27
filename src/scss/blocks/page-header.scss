@@ -1,0 +1,30 @@
+/*==========================================================================
+  page-header
+==========================================================================*/
+
+.page-header {
+  z-index: $above-content;
+  height: $header-height-sm;
+  background-color: #fff;
+
+  @media only screen and (min-width: 1170px) {
+    height: $header-height-lg;
+    @include clearfix;
+  }
+}
+
+.page-header__controls {
+  position: absolute;
+  top: 3px;
+  right: 5%;
+  @include list-unstyled;
+
+  @media only screen and (min-width: 1170px) {
+    top: 18px;
+    right: 4em;
+  }
+}
+
+.page-header__controls-item {
+  display: inline-block;
+}

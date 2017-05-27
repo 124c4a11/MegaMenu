@@ -1,13 +1,27 @@
 $font-size-base: 16;
 
-$text-color-base: #333;
+$grey-dark: #2e3233; // grey dark
+$grey-light: #e2e3df; // grey light
+$green: #69aa6f; // green
+
+$text-color-base: $grey-dark;
 $text-color-light: #fff;
 
-$body-bg-color: #f4f4f4;
+$body-bg-color: #fff;
 
-$z-index-max: 9000;
 
-$fb-color: #4f689e;
-$tw-color: #74c7d5;
-$gp-color: #df5c64;
-$in-color: #3e61af;
+// header size
+$header-height-sm: 50px;
+$header-height-lg: 80px;
+
+// Navigation size
+$nav-width-sm: 260px;
+
+// Search size
+$search-height-sm: 50px;
+$search-height-lg: 120px;
+
+// z-index
+$below-content: 1;
+$content: 2;
+$above-content: 3;
