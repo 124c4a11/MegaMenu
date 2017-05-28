@@ -3,7 +3,11 @@
 ==========================================================================*/
 
 .page-header {
+  position: relative;
   z-index: $above-content;
+  /* Force Hardware Acceleration in WebKit */
+  transform: translateZ(0);
+
   height: $header-height-sm;
   background-color: #fff;
 
