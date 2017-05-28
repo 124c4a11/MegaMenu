@@ -12,6 +12,10 @@ $(document).ready(function() {
   if ($('.search').length && $('.search-trigger')) {
     $('.search-trigger').on('click', toggleSearch);
   }
+
+  if ($('.overlay').length) {
+    $('.overlay').on('click', clickOnOverlay);
+  }
 });
 
 
@@ -27,4 +31,10 @@ function toggleSearch(e) {
     search.open();
     overlay.show();
   }
+}
+
+
+function clickOnOverlay() {
+  search.close();
+  overlay.hide();
 }
