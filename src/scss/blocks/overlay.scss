@@ -21,8 +21,8 @@
   opacity: 1;
   visibility: visible;
   transition: opacity .3s 0s, visibility 0s 0s, transform .3s 0s;
+}
 
-  @media only screen and (min-width: 1169px) {
-    transform: translateX(-$nav-width-sm);
-  }
+.overlay_visible-on-left {
+  transform: translate(-$nav-width-sm);
 }
