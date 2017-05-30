@@ -1,0 +1,312 @@
+/*==========================================================================
+  mega-menu
+==========================================================================*/
+
+.mega__primary-nav,
+.mega__secondary-nav,
+.mega__inner-list {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: $below-content;
+  /* Force Hardware Acceleration in WebKit */
+  transform: translateZ(0);
+
+  transform: translateX(0);
+  @include list-unstyled;
+  width: $nav-width-sm;
+  height: 100%;
+  background-color: $grey-dark;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  transition: transform .3s;
+}
+
+.mega__primary-nav-link,
+.mega__secondary-nav-link,
+.mega__inner-list-link {
+  transform: translateZ(0);
+  display: block;
+  height: 50px;
+  padding: 0 20px;
+  border-bottom: 1px solid lighten($grey-dark, 5%);
+  line-height: 50px;
+  color: #fff;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-decoration: none;
+  transition: transform .3s, opacity .3s;
+}
+
+.mega__list_hidden {
+  transform: translateX(100%);
+}
+
+.mega__list_moves-out {
+  .mega__primary-nav-link,
+  .mega__secondary-nav-link,
+  .mega__inner-list-link {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+.mega__link_see-all {
+  color: $green;
+}
+
+.mega-link_has-children,
+.mega-link_go-back {
+  position: relative;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    display: inline-block;
+    width: 10px;
+    height: 2px;
+    margin-top: -1px;
+    background-color: lighten($grey-dark, 10%);
+    backface-visibility: hidden;
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+
+  @media only screen and (min-width: 1170px) {
+    &::before,
+    &::after {
+      background-color: darken($grey-light, 10%);
+    }
+
+    &:hover::before,
+    &:hover::after {
+      background-color: $green;
+    }
+  }
+}
+
+.mega__link_has-children {
+  padding-right: 40px;
+
+  &::before,
+  &::after {
+    right: 20px;
+    transform-origin: 9px 50%;
+  }
+}
+
+@media only screen and (min-width: 1170px) {
+  .mega__primary-nav {
+    position: static;
+    float: right;
+    width: auto;
+    height: auto;
+    padding: 0 150px 0 0;
+    background-color: transparent;
+    overflow: visible;
+    @include clearfix;
+  }
+
+  .mega__primary-nav-item {
+    float: left;
+    margin-left: 3em;
+  }
+
+  .mega__primary-nav-link {
+    position: relative;
+    display: inline-block;
+    height: $header-height-lg;
+    padding: 0 10px;
+    border-bottom: 0 none;
+    line-height: $header-height-lg;
+    color: $grey-dark;
+    overflow: visible;
+    transition: color .3s, box-shadow .3s;
+
+    &:hover,
+    &.mega__primary-nav-link_selected {
+      color: $green;
+    }
+  }
+
+  .mega__primary-nav-link {
+    position: relative;
+    display: inline-block;
+    height: $header-height-lg;
+    padding: 0 10px;
+    border-bottom: 0 none;
+    line-height: $header-height-lg;
+    color: $grey-dark;
+  }
+
+  .mega__secondary-nav,
+  .mega__inner-list {
+    position: static;
+    z-index: $above-content;
+    width: auto;
+    height: auto;
+    background-color: transparent;
+    overflow: visible;
+
+    .mega__item_go-back,
+    .mega__item_see-all {
+      display: none;
+    }
+  }
+
+  .mega__list_hidden {
+    transform: translateX(0);
+  }
+
+  .mega__list_moves-out {
+    .mega__primary-nav-link,
+    .mega__secondary-nav-link,
+    .mega__inner-list-link {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .mega__secondary-nav,
+  .mega__gallery {
+    /* dropdown menu style */
+    position: absolute;
+    top: $header-height-lg;
+    transform: translateX(0);
+    width: 100vw;
+    padding: 48px 64px 130px;
+    background-color: #fff;
+    transition: opacity .3s 0s, visibility 0s 0s;
+    @include clearfix;
+  }
+
+  .mega__item_see-all {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+
+    .mega__link_see-all {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-top: 1px solid $grey-light;
+      border-bottom: 0 none;
+      font-weight: bold;
+      font-size: 2.2rem;
+      line-height: 80px;
+
+      &:hover {
+        border-color: $grey-dark;
+        color: #fff;
+        background-color: $grey-dark;
+      }
+    }
+  }
+
+  .mega__secondary-nav-item {
+    float: left;
+    /* change the height according to your needs - you can even set height: auto */
+    height: 340px;
+    width: 100% * 0.23;
+    margin-right: 2.66%;
+    border-right: 1px solid $grey-light;
+    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+
+    &:nth-child(4n+2) {
+      margin-right: 0;
+      border-right: 0 none;
+    }
+  }
+
+  .mega__secondary-nav-link,
+  .mega__inner-list-link {
+    height: 30px;
+    padding: 0 18% 0 0;
+    border-bottom: 0 none;
+    line-height: 30px;
+    color: $grey-dark;
+
+    &:hover {
+      color: $green;
+    }
+  }
+
+  .mega__secondary-nav-link {
+    margin-bottom: .6em;
+    font-weight: bold;
+    font-size: 1.6rem;
+    color: $green;
+  }
+
+  .mega__inner-list .mega__inner-list {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    &.mega__list_hidden {
+      transform: translateX(100%);
+    }
+
+    .mega__item_go-back {
+      display: block;
+    }
+
+    .mega__link_go-back {
+      color: transparent;
+    }
+
+    .mega__item_see-all {
+      display: block;
+    }
+  }
+
+  .mega__link_has-children {
+    &::before,
+    &::after {
+      right: 15%;
+    }
+  }
+
+  .mega__primary-nav > .mega__link_has-children {
+    padding-right: 30px !important;
+
+    &::before,
+    &::after {
+      transform-origin: (50% 50%);
+      width: 9px;
+      background-color: darken($grey-light, 10%);
+      backface-visibility: hidden;
+      transition: width .3s, transform .3s;
+    }
+
+    &::before {
+      right: 12px;
+    }
+
+    &::after {
+      right: 7px;
+    }
+
+  }
+}

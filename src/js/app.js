@@ -16,6 +16,9 @@ $(document).ready(function() {
   if ($('.overlay').length) {
     $('.overlay').on('click', clickOnOverlay);
   }
+
+  var $megaMenu = $('.mega');
+  $megaMenu.insertBefore('.page-header__controls');
 });
 
 
