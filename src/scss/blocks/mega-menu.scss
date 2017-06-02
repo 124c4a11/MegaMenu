@@ -55,8 +55,8 @@
   color: $green;
 }
 
-.mega-link_has-children,
-.mega-link_go-back {
+.mega__link_has-children,
+.mega__link_go-back {
   position: relative;
 
   &::before,
@@ -188,7 +188,7 @@
     @include clearfix;
   }
 
-  .mega__item_see-all {
+  .mega__secondary-nav > .mega__item_see-all {
     display: block;
     position: absolute;
     bottom: 0;
@@ -205,11 +205,15 @@
       left: 0;
       width: 100%;
       height: 100%;
+      padding: 0;
+      margin: 0;
       border-top: 1px solid $grey-light;
       border-bottom: 0 none;
       font-weight: bold;
       font-size: 2.2rem;
       line-height: 80px;
+      text-align: center;
+      transition: color .2s, background .2s, border .2s;
 
       &:hover {
         border-color: $grey-dark;
@@ -257,6 +261,11 @@
     color: $green;
   }
 
+  .mega__secondary-nav > .mega__item_has-children > .mega__link_has-children::before,
+  .mega__secondary-nav > .mega__item_has-children > .mega__link_has-children::after {
+    display: none;
+  }
+
   .mega__inner-list .mega__inner-list {
     position: absolute;
     top: 0;
@@ -288,7 +297,7 @@
     }
   }
 
-  .mega__primary-nav > .mega__link_has-children {
+  .mega__primary-nav > .mega__primary-nav-item > .mega__link_has-children {
     padding-right: 30px !important;
 
     &::before,
