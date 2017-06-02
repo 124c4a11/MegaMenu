@@ -2,6 +2,7 @@
 
 import search from './modules/search';
 import overlay from './modules/overlay';
+import megaMenu from './modules/megaMenu.js';
 
 //if you change this breakpoint in the style.css file (or _layout.scss if you use SASS), don't forget to update this value as well
 var
@@ -16,6 +17,11 @@ $(document).ready(function() {
   if ($('.overlay').length) {
     $('.overlay').on('click', clickOnOverlay);
   }
+});
+
+
+$(window).on('resize', function() {
+
 });
 
 
