@@ -17,11 +17,17 @@ $(document).ready(function() {
   if ($('.overlay').length) {
     $('.overlay').on('click', clickOnOverlay);
   }
+
+  if ($('.mega').length) {
+    megaMenu.moveNavigation();
+  }
 });
 
 
 $(window).on('resize', function() {
-
+  if ($('.mega').length) {
+    megaMenu.moveNavigation();
+  }
 });
 
 
