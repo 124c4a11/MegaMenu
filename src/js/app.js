@@ -58,6 +58,7 @@ function toggleSearch(e) {
   }
 }
 
+
 function clickOnNavTrigger(e) {
   e.preventDefault();
 
@@ -81,5 +82,18 @@ function clickOnNavTrigger(e) {
 
 function clickOnOverlay() {
   search.close();
+  megaMenu.close();
   overlay.hide();
+
+  if ($overlay.hasClass('overlay_move-left')) {
+    $overlay.removeClass('overlay_move-left');
+  }
+
+  if ($pageHeader.hasClass('page-header_move-left')) {
+    $pageHeader.removeClass('page-header_move-left');
+  }
+
+  if ($mainContent.hasClass('main-content_move-left')) {
+    $mainContent.removeClass('main-content_move-left');
+  }
 }
