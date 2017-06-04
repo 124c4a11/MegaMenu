@@ -38,6 +38,18 @@
   transition: transform .3s, opacity .3s;
 }
 
+.mega__primary-nav {
+  @media only screen and (max-width: 1169px) {
+    visibility: hidden;
+    transition: visibility 0s .3s;
+
+    &.mega__primary-nav_visible {
+      visibility: visible;
+      transition: visibility 0s 0s;
+    }
+  }
+}
+
 .mega__list_hidden {
   transform: translateX(100%);
 }
@@ -186,6 +198,12 @@
     background-color: #fff;
     transition: opacity .3s 0s, visibility 0s 0s;
     @include clearfix;
+
+    &.mega__list_hidden {
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .3s 0s, visibility 0s .3s;
+    }
   }
 
   .mega__secondary-nav > .mega__item_see-all {

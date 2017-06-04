@@ -1,0 +1,19 @@
+/*==========================================================================
+  main-content
+==========================================================================*/
+
+.main-content {
+  position: relative;
+  z-index: $content;
+  /* Force Hardware Acceleration in WebKit */
+  transform: translateZ(0);
+  min-height: 100vh;
+  background-color: $grey-light;
+  transition: transform .3s;
+}
+
+.main-content_move-left {
+  @media only screen and (max-width: 1169px) {
+    transform: translateX(-$nav-width-sm);
+  }
+}

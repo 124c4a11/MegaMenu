@@ -1,29 +1,41 @@
 'use strict';
 
 var
+  $container = $('.mega'),
+  $primaryNav = $container.find('.mega__primary-nav');
+
+var
   MqL = 1170;
 
 
-function close() {
-
+function open() {
+  $primaryNav.addClass('mega__primary-nav_visible');
 }
+
+
+function close() {
+  $primaryNav.removeClass('mega__primary-nav_visible');
+}
+
 
 
 function moveNavigation() {
   var
-    navigation = $('.mega'),
     windowWidth = $(window).width();
 
   if (windowWidth >= MqL) {
     // if desctop
-    navigation.detach();
-    navigation.insertBefore('.page-header__controls');
+    $container.detach();
+    $container.insertBefore('.page-header__controls');
   } else {
-    navigation.detach();
-    navigation.appendTo('body');
+    $container.detach();
+    $container.insertAfter('.main-content');
   }
 }
 
+
 export default {
-  moveNavigation: moveNavigation
+  moveNavigation: moveNavigation,
+  open: open,
+  close: close
 }

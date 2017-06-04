@@ -10,6 +10,7 @@
 
   height: $header-height-sm;
   background-color: #fff;
+  transition: transform .3s;
 
   @media only screen and (min-width: 1170px) {
     height: $header-height-lg;

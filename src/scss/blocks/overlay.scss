@@ -23,6 +23,6 @@
   transition: opacity .3s 0s, visibility 0s 0s, transform .3s 0s;
 }
 
-.overlay_visible-on-left {
+.overlay_move-left {
   transform: translate(-$nav-width-sm);
 }
