@@ -143,9 +143,34 @@
     overflow: visible;
     transition: color .3s, box-shadow .3s;
 
+    &.mega__link_has-children {
+      &::before {
+        right: 12px;
+      }
+
+      &::after {
+        right: 7px;
+      }
+    }
+
     &:hover,
-    &.mega__primary-nav-link_selected {
+    &.mega__link_selected {
       color: $green;
+    }
+
+    &.mega__link_selected {
+      &::before,
+      &::after {
+        width: 14px;
+      }
+
+      &::before {
+        transform: translateX(5px) rotate(-45deg);
+      }
+
+      &::after {
+        transform: rotate(45deg);
+      }
     }
   }
 

@@ -18,7 +18,6 @@ function close() {
 }
 
 
-
 function moveNavigation() {
   var
     windowWidth = $(window).width();

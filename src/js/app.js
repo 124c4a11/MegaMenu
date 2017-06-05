@@ -29,6 +29,7 @@ $(document).ready(function() {
 
   if ($mega) {
     megaMenu.moveNavigation();
+    $('.mega__link_has-children').on('click', clickOnHasChildren);
   }
 
   if ($navTrigger) {
@@ -80,6 +81,49 @@ function clickOnNavTrigger(e) {
 }
 
 
+function clickOnHasChildren(e) {
+  if (!checkWindowWidth()) e.preventDefault();
+
+  var $selected = $(this);
+
+  if ($selected.next('ul').hasClass('mega__list_hidden')) {
+    // desctop version only
+    $selected
+      .addClass('mega__link_selected')
+      .next('ul')
+        .removeClass('mega__list_hidden')
+        .end()
+      .parent('.mega__item_has-children')
+        .parent('ul')
+          .addClass('mega__list_moves-out');
+
+    $selected
+      .parent('.mega__item_has-children')
+        .siblings('.mega__item_has-children')
+          .children('ul')
+            .addClass('mega__list_hidden')
+            .end()
+      .children('a')
+        .removeClass('mega__link_selected');
+
+    overlay.show();
+  } else {
+    $selected
+      .removeClass('mega__link_selected')
+      .next('ul')
+        .addClass('mega__list_hidden')
+        .end()
+      .parent('mega__item_has-children')
+        .parent('ul')
+          .removeClass('mega__list_moves-out')
+
+    overlay.hide();
+  }
+
+  if ($search.hasClass('search_visible')) search.close();
+}
+
+
 function clickOnOverlay() {
   search.close();
   megaMenu.close();
@@ -95,5 +139,21 @@ function clickOnOverlay() {
 
   if ($mainContent.hasClass('main-content_move-left')) {
     $mainContent.removeClass('main-content_move-left');
+  }
+}
+
+
+function checkWindowWidth() {
+  //check window width (scrollbar included)
+  var e = window,
+      a = 'inner';
+  if (!('innerWidth' in window )) {
+      a = 'client';
+      e = document.documentElement || document.body;
+  }
+  if ( e[ a+'Width' ] >= MqL ) {
+    return true;
+  } else {
+    return false;
   }
 }
