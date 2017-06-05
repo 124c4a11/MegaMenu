@@ -113,7 +113,7 @@ function clickOnHasChildren(e) {
       .next('ul')
         .addClass('mega__list_hidden')
         .end()
-      .parent('mega__item_has-children')
+      .parent('.mega__item_has-children')
         .parent('ul')
           .removeClass('mega__list_moves-out')
 

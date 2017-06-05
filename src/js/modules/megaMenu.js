@@ -15,6 +15,9 @@ function open() {
 
 function close() {
   $primaryNav.removeClass('mega__primary-nav_visible');
+  $('.mega__item_has-children ul').addClass('mega__list_hidden');
+  $('.mega__link_has-children').removeClass('mega__link_selected');
+  $('.mega__list_moves-out').removeClass('mega__list_moves-out');
 }
 
 
