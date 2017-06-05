@@ -39,6 +39,16 @@
 }
 
 .mega__primary-nav {
+  .mega__link_go-back {
+    padding-left: 40px;
+
+    &::before,
+    &::after {
+      transform-origin: 1px 50%;
+      left: 20px;
+    }
+  }
+
   @media only screen and (max-width: 1169px) {
     visibility: hidden;
     transition: visibility 0s .3s;
@@ -121,6 +131,15 @@
     background-color: transparent;
     overflow: visible;
     @include clearfix;
+
+    .mega__link_go-back {
+      padding-left: 20px;
+
+      &::before,
+      &::after {
+        left: 1px;
+      }
+    }
 
     &.mega__list_moves-out li > a {
         transform: translateX(0);
