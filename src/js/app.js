@@ -30,6 +30,7 @@ $(document).ready(function() {
   if ($mega) {
     megaMenu.moveNavigation();
     $('.mega__link_has-children').on('click', clickOnHasChildren);
+    $('.mega__item_go-back').on('click', clickOnGoBack);
   }
 
   if ($navTrigger) {
@@ -121,6 +122,18 @@ function clickOnHasChildren(e) {
   }
 
   if ($search.hasClass('search_visible')) search.close();
+}
+
+
+function clickOnGoBack() {
+  var $goBack = $(this);
+
+  $goBack
+    .parent('ul')
+      .addClass('mega__list_hidden')
+        .parent('.mega__item_has-children')
+          .parent('ul')
+            .removeClass('mega__list_moves-out')
 }
 
 
