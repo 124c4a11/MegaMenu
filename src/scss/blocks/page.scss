@@ -3,5 +3,7 @@
 }
 
 .page_overflow-hidden {
-  overflow: hidden;
+  @media only screen and (max-width: 1169px) {
+    overflow: hidden;
+  }
 }
