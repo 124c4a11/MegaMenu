@@ -95,6 +95,8 @@ function clickOnNavTrigger(e) {
     overlay.show();
     $overlay.addClass('overlay_move-left');
     megaMenu.open();
+
+    if ($search.hasClass('search_visible')) search.close();
   }
 }
 
