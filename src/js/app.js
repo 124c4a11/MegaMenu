@@ -57,6 +57,23 @@ function toggleSearch(e) {
   } else {
     search.open();
     overlay.show();
+    megaMenu.close();
+
+    if ($navTrigger.hasClass('hamburger_close')) {
+      $navTrigger.removeClass('hamburger_close');
+    }
+
+    if ($overlay.hasClass('overlay_move-left')) {
+      $overlay.removeClass('overlay_move-left');
+    }
+
+    if ($pageHeader.hasClass('page-header_move-left')) {
+      $pageHeader.removeClass('page-header_move-left');
+    }
+
+    if ($mainContent.hasClass('main-content_move-left')) {
+      $mainContent.removeClass('main-content_move-left');
+    }
   }
 }
 
